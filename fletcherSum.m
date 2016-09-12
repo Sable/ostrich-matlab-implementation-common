@@ -6,8 +6,14 @@
 function [output] = fletcherSum(A) 
     sum1 = 0;
     sum2 = 0;
+
+    s = size(A);
+    l = 1;
+    for i=1:length(s)
+        l = l*s(i);
+    end
     
-    for i=1:length(A)
+    for i=1:l
         sum1 = mod(sum1 + A(i), 255);
         sum2 = mod(sum2 + sum1, 255);
     end
